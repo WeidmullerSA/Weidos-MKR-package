@@ -17,8 +17,11 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
   Turns ON/OFF each digital output sequentially.
   To check how it works, take a look on Weidos' LEDs.
+  OUTPUT RANGE:
+      LOW: GND
+      HIGH: (Vin - 1V) (Vin = Weidos power supply voltage)
 
-  It also shows that one can use different namings for the
+  It also shows that one can use different naming for the
   Digital Output pins: 
   - Connector Numbers: pin55, pin56, pin57, pin58
   - Weidos pin names: DO_0, DO_1, DO_2, DO_3

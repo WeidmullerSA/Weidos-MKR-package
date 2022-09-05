@@ -20,7 +20,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
   
   First, it shows how to read/write a cell (1 byte) from the EEPROM.
-  Then two objects, an double and an integer with known values,
+  Then two objects, a double and an integer with known values,
   will be saved with E2PROM method put(); this value will be
   recovered with method get() and stored to a new variables intialized to 0.
   To check that the put/get methods were successful, those new
