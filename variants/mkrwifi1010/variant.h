@@ -22,6 +22,7 @@
 #define ARDUINO_SAMD_VARIANT_COMPLIANCE 10610
 
 #include <WVariant.h>
+#include "pins_weidos.h"
 
 // General definitions
 // -------------------
