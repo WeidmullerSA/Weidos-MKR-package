@@ -39,6 +39,11 @@ static const uint32_t pin45 = AO_0;
 #define HAVE_MCP23008
 
 #define ETHERNET_CS (6u)            //Ethernet slave select/chip select
+
+#define RS485_TX 14
+#define RS485_DE 5
+#define RS485_RE 5
+
 //####Weidmuller####
 #endif
 
