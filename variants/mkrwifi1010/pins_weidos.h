@@ -2,6 +2,15 @@
 #define PINS_WEIDOS_H
 
 //####Weidmuller####
+//Digital inputs
+#define DI_4 (25u)
+#define DI_5 (1u)
+#define DI_6 (2u)
+#define DI_7 (3u)
+static const uint32_t pin25 = DI_4;
+static const uint32_t pin26 = DI_5;
+static const uint32_t pin27 = DI_6;
+static const uint32_t pin28 = DI_7;
 
 //Digital outputs
 #define DO_0 (0x2100)
