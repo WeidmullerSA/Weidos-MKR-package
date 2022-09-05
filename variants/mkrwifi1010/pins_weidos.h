@@ -32,6 +32,10 @@ static const uint32_t pin16 = ADI_1;
 static const uint32_t pin17 = ADI_2;
 static const uint32_t pin18 = ADI_3;
 
+//Analog output
+#define AO_0 (15u)
+static const uint32_t pin45 = AO_0;
+
 #define HAVE_MCP23008
 
 #define SDCARD_SS_PIN (0x2106)    //SD slave select/chip select
