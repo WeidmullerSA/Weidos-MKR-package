@@ -22,7 +22,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   SW1: 4=ON 1,2,3=indifferent
   SW2: 1=OFF, 2=OFF, 3=ON, 4=ON
 
-  To recieve what it's being sent, example RS485_recieve (File/Examples/RS485/RS485_recieve) can be used in a second Weidos. Both Weidos'
+  To receive what it's being sent, example RS485_receive (File/Examples/RS485/RS485_receive) can be used in a second Weidos. Both Weidos'
   DIP switches MUST be configured to use RS485. Wire pin11 <-> pin11 and pin12 <-> pin12.
 
   WARNING!!! DIP switches must be configured to use RS485 prior to ANY WIRING with your device POWERED OFF.

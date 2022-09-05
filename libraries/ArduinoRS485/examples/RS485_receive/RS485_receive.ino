@@ -13,7 +13,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
 /*
-  RS485 Receieve example
+  RS485 Receive example
 
   This sketch receives data over RS485 interface and outputs the data to the Serial Monitor.
 
@@ -21,7 +21,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   SW1: 4=ON 1,2,3=indifferent
   SW2: 1=OFF, 2=OFF, 3=ON, 4=ON
 
-  Example RS485_send (File/Examples/RS485/RS485_send) can be used in a second Weidos to recieve data from it. Both Weidos'
+  Example RS485_send (File/Examples/RS485/RS485_send) can be used in a second Weidos to receive data from it. Both Weidos'
   DIP switches MUST be configured to use RS485. Wire pin11 <-> pin11 and pin12 <-> pin12.
   
   WARNING!!! DIP switches must be configured to use RS485 prior to ANY WIRING with your device POWERED OFF.
