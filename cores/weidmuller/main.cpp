@@ -51,6 +51,7 @@ int main( void )
 
   initExpandedGpio();
   weidos_initDefaultIOPins();
+  analogReadResolution(12);
 
   setup();
 

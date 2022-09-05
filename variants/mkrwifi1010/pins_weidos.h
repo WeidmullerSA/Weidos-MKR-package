@@ -22,6 +22,16 @@ static const uint32_t pin56 = DO_1;
 static const uint32_t pin57 = DO_2;
 static const uint32_t pin58 = DO_3;
 
+//Analog/Digital inputs
+#define ADI_0 (17u)
+#define ADI_1 (16u)
+#define ADI_2 (20u)
+#define ADI_3 (21u)
+static const uint32_t pin15 = ADI_0;
+static const uint32_t pin16 = ADI_1;
+static const uint32_t pin17 = ADI_2;
+static const uint32_t pin18 = ADI_3;
+
 #define HAVE_MCP23008
 //####Weidmuller####
 #endif
