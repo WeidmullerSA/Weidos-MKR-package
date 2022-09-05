@@ -40,6 +40,8 @@ static const uint32_t pin45 = AO_0;
 
 #define SDCARD_SS_PIN (0x2106)      //SD slave select/chip select
 #define ETHERNET_CS (6u)            //Ethernet slave select/chip select
+#define UART Serial1
+
 
 #define RS485_TX 14
 #define RS485_DE 5
