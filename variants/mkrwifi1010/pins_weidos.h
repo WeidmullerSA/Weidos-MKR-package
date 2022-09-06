@@ -3,6 +3,23 @@
 
 //####Weidmuller####
 
+//RS485 - UART
+#define A       (14)
+#define B       (13)
+#define Tx_0    (14)
+#define Rx_0    (13)
+#define RTE_DE  (5)
+static const uint32_t pin11 = A;
+static const uint32_t pin12 = B;
+static const uint32_t pin14 = RTE_DE;
+
+//RS485 macros to be used in the library.
+#define RS485_TX (14)
+#define RS485_DE (5)
+#define RS485_RE (5)
+//UART macro to use Serial1 with this name.
+#define UART Serial1
+
 //Analog/Digital inputs
 #define ADI_0 (17u)
 #define ADI_1 (16u)
@@ -24,14 +41,24 @@ static const uint32_t pin27 = DI_6;
 static const uint32_t pin28 = DI_7;
 
 //Multifunction pins
-#define MF_0    19
-#define MF_1    0
+#define MF_0    (19)
+#define MF_1    (0)
 static const uint32_t pin41 = MF_0;
 static const uint32_t pin42 = MF_1;
 
 //Analog output
 #define AO_0 (15u)
 static const uint32_t pin45 = AO_0;
+
+//SPI pins
+#define MISO_0  (10)
+#define MOSI_0  (8)
+#define SCK_0   (9)
+#define CS      (4)
+static const uint32_t pin51 = MISO_0;
+static const uint32_t pin52 = MOSI_0;
+static const uint32_t pin53 = SCK_0;
+static const uint32_t pin54 = CS;
 
 //Digital outputs
 #define DO_0 (0x2100)
@@ -44,21 +71,19 @@ static const uint32_t pin57 = DO_2;
 static const uint32_t pin58 = DO_3;
 
 
+//I2C pins
+#define SDA_0  (11)
+#define SCL_0  (12)
+static const uint32_t pin61 = SDA_0;
+static const uint32_t pin62 =SCL_0;
 
 
-
-
-
+//Macros for libraries
 #define HAVE_MCP23008
 
 #define SDCARD_SS_PIN (0x2106)      //SD slave select/chip select
 #define ETHERNET_CS (6u)            //Ethernet slave select/chip select
-#define UART Serial1
 
-
-#define RS485_TX 14
-#define RS485_DE 5
-#define RS485_RE 5
 
 //####Weidmuller####
 #endif
