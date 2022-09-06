@@ -42,7 +42,13 @@ configureDiscreteInputs	KEYWORD2
 configureHoldingRegisters	KEYWORD2
 configureInputRegisters	KEYWORD2
 discreteInputWrite	KEYWORD2
+writeDiscreteInputs	KEYWORD2
 inputRegisterWrite	KEYWORD2
+writeInputRegisters	KEYWORD2
+
+connected	KEYWORD2
+stop	KEYWORD2
+accept	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
