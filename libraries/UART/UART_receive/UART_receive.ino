@@ -36,7 +36,7 @@ void setup() {
 }
 
 void loop() {
-  if(Serial.available())
+  if(UART.available())
     {
       Serial.println(UART.read());
     }
