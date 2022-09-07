@@ -22,8 +22,8 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   - Weidos pin names: DI_4, DI_5, DI_6, DI_7
   
   Digital Input values are:
-    - LOW: <3.3V
-    - HIGH: >5V
+    - LOW: <3.3V  (Falling edge)
+    - HIGH: >5V   (Rising edge)
     - RANGE: 0V-24V
 */
 

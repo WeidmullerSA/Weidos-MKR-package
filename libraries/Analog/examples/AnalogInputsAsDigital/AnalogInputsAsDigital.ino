@@ -18,8 +18,10 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   Constantly reads digital value from all Analog Input pins and prints them
   in the Serial Monitor. 
   Input range:
-    - LOW: 0V to 5V
-    - HIGH: 5V - 24V
+      - LOW: <3.3V  (Falling edge)
+      - HIGH: >5V   (Rising edge)
+      - RANGE: 0V-24V
+
   It also shows that one can use different namings for the
   Analog Input pins: 
   - Connector Numbers: pin15, pin16, pin17, pin18

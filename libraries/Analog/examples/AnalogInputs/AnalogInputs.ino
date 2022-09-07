@@ -15,8 +15,12 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 /**
   Analog Inputs example
 
-  Constantly reads value from all Analog Inputs (Input Range: 0V to 10V - Resolution: 12-bits) and prints it to the 
-  Serial Monitor. It also shows that one can use different naming for the Analog Inputs: 
+  Constantly reads value from all Analog Inputs and prints it to the 
+  Serial Monitor.
+  Input Range:  0V - 10V
+  Resolution:   12-bits
+  
+  It also shows that one can use different naming for the Analog Inputs: 
   - Connector Numbers: pin15, pin16, pin17, pin18
   - Weidos pin names: ADI_0, ADI_1, ADI_2, ADI_3
 */

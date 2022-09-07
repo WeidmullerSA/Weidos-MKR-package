@@ -22,7 +22,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 #include <SD.h>
 File myFile;
-String fileName = "example.txt";
+String fileName = "example.txt";    //Maximum name's length is 13 characters (including extension ".txt").
 
 
 void setup() {
