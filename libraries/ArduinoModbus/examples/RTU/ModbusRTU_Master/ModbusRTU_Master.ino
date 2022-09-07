@@ -28,7 +28,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
           - Data bits: 8
           - Parity: Even   
           - Stop bits: 1
-   Available configurations are defined in file "HardwareSerial.h" (Arduino15/packages/weidmuller/hardware/samd/X.X.X/cores/weidmuller/api/HardwareSerial.h 
+  Available configurations are defined in file "HardwareSerial.h" (Arduino15/packages/weidmuller/hardware/samd/X.X.X/cores/weidmuller/api/HardwareSerial.h)
 
   Each 5 seconds it makes 4 requests:
     1- 3 consecutive COILS starting at address 700.

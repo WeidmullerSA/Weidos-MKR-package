@@ -32,7 +32,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
           - Data bits: 8
           - Parity: Even   
           - Stop bits: 1
-   Available configurations are defined in file "HardwareSerial.h" (Arduino15/packages/weidmuller/hardware/samd/X.X.X/cores/weidmuller/api/HardwareSerial.h 
+   Available configurations are defined in file "HardwareSerial.h" (Arduino15/packages/weidmuller/hardware/samd/X.X.X/cores/weidmuller/api/HardwareSerial.h) 
 
     - Coils: 3 consecutive coils starting at address 700. Its values are: 1,0,0
     - Discrete Inputs: 3 consecutive discrete inputs starting at address 800. Its values are: 0,1,0
