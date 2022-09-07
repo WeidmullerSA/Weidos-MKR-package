@@ -15,125 +15,125 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 ##########################################
-##### WEIDOS-MKR1010 #####################
+##### WEIDOS-MKR1010-A1 #####################
 ##########################################
 # --------------------
-weidosMKR1010.name=WEIDOS-MKR1010
-weidosMKR1010.vid.0=0x2341
-weidosMKR1010.pid.0=0x8054
-weidosMKR1010.vid.1=0x2341
-weidosMKR1010.pid.1=0x0054
-weidosMKR1010.upload_port.0.vid=0x2341
-weidosMKR1010.upload_port.0.pid=0x8054
-weidosMKR1010.upload_port.1.vid=0x2341
-weidosMKR1010.upload_port.1.pid=0x0054
-weidosMKR1010.upload_port.2.board=mkrwifi1010
+weidosMKR1010A1.name=WEIDOS-MKR1010-A1
+weidosMKR1010A1.vid.0=0x2341
+weidosMKR1010A1.pid.0=0x8054
+weidosMKR1010A1.vid.1=0x2341
+weidosMKR1010A1.pid.1=0x0054
+weidosMKR1010A1.upload_port.0.vid=0x2341
+weidosMKR1010A1.upload_port.0.pid=0x8054
+weidosMKR1010A1.upload_port.1.vid=0x2341
+weidosMKR1010A1.upload_port.1.pid=0x0054
+weidosMKR1010A1.upload_port.2.board=mkrwifi1010
 
-weidosMKR1010.upload.tool=bossac
-weidosMKR1010.upload.tool.default=bossac
-weidosMKR1010.upload.tool.network=arduino_ota
-weidosMKR1010.upload.protocol=sam-ba
-weidosMKR1010.upload.maximum_size=262144
-weidosMKR1010.upload.maximum_data_size=32768
-weidosMKR1010.upload.use_1200bps_touch=true
-weidosMKR1010.upload.wait_for_upload_port=true
-weidosMKR1010.upload.native_usb=true
-weidosMKR1010.build.mcu=cortex-m0plus
-weidosMKR1010.build.f_cpu=48000000L
-weidosMKR1010.build.usb_product="Arduino MKR WiFi 1010"
-weidosMKR1010.build.usb_manufacturer="Arduino LLC"
-weidosMKR1010.build.board=SAMD_MKRWIFI1010
-weidosMKR1010.build.core=weidmuller
-weidosMKR1010.build.extra_flags=-DUSE_ARDUINO_MKR_PIN_LAYOUT -D__SAMD21G18A__ {build.usb_flags} -DUSE_BQ24195L_PMIC -DEXTENDED_PIN_MODE
-weidosMKR1010.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
-weidosMKR1010.build.openocdscript=openocd_scripts/arduino_zero.cfg
-weidosMKR1010.build.variant=mkrwifi1010
-weidosMKR1010.build.vid=0x2341
-weidosMKR1010.build.pid=0x8054
-weidosMKR1010.bootloader.tool=openocd
-weidosMKR1010.bootloader.tool.default=openocd
-weidosMKR1010.bootloader.file=mkrwifi1010/samd21_sam_ba_arduino_mkrwifi1010.bin
-#weidosMKR1010.arduinoota.extraflags=-d
+weidosMKR1010A1.upload.tool=bossac
+weidosMKR1010A1.upload.tool.default=bossac
+weidosMKR1010A1.upload.tool.network=arduino_ota
+weidosMKR1010A1.upload.protocol=sam-ba
+weidosMKR1010A1.upload.maximum_size=262144
+weidosMKR1010A1.upload.maximum_data_size=32768
+weidosMKR1010A1.upload.use_1200bps_touch=true
+weidosMKR1010A1.upload.wait_for_upload_port=true
+weidosMKR1010A1.upload.native_usb=true
+weidosMKR1010A1.build.mcu=cortex-m0plus
+weidosMKR1010A1.build.f_cpu=48000000L
+weidosMKR1010A1.build.usb_product="Arduino MKR WiFi 1010"
+weidosMKR1010A1.build.usb_manufacturer="Arduino LLC"
+weidosMKR1010A1.build.board=SAMD_MKRWIFI1010
+weidosMKR1010A1.build.core=weidmuller
+weidosMKR1010A1.build.extra_flags=-DUSE_ARDUINO_MKR_PIN_LAYOUT -D__SAMD21G18A__ {build.usb_flags} -DUSE_BQ24195L_PMIC -DEXTENDED_PIN_MODE
+weidosMKR1010A1.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
+weidosMKR1010A1.build.openocdscript=openocd_scripts/arduino_zero.cfg
+weidosMKR1010A1.build.variant=mkrwifi1010
+weidosMKR1010A1.build.vid=0x2341
+weidosMKR1010A1.build.pid=0x8054
+weidosMKR1010A1.bootloader.tool=openocd
+weidosMKR1010A1.bootloader.tool.default=openocd
+weidosMKR1010A1.bootloader.file=mkrwifi1010/samd21_sam_ba_arduino_mkrwifi1010.bin
+#weidosMKR1010A1.arduinoota.extraflags=-d
 
 
 ##########################################
-##### WEIDOS-MKR1010-LORA ################
+##### WEIDOS-MKR1010-LORA-A1 #############
 ##########################################
 # --------------------
-weidosMKR1010LoRa.name=WEIDOS-MKR1010-LORA
-weidosMKR1010LoRa.vid.0=0x2341
-weidosMKR1010LoRa.pid.0=0x8054
-weidosMKR1010LoRa.vid.1=0x2341
-weidosMKR1010LoRa.pid.1=0x0054
-weidosMKR1010LoRa.upload_port.0.vid=0x2341
-weidosMKR1010LoRa.upload_port.0.pid=0x8054
-weidosMKR1010LoRa.upload_port.1.vid=0x2341
-weidosMKR1010LoRa.upload_port.1.pid=0x0054
-weidosMKR1010LoRa.upload_port.2.board=mkrwifi1010
+weidosMKR1010LoRaA1.name=WEIDOS-MKR1010-LORA-A1
+weidosMKR1010LoRaA1.vid.0=0x2341
+weidosMKR1010LoRaA1.pid.0=0x8054
+weidosMKR1010LoRaA1.vid.1=0x2341
+weidosMKR1010LoRaA1.pid.1=0x0054
+weidosMKR1010LoRaA1.upload_port.0.vid=0x2341
+weidosMKR1010LoRaA1.upload_port.0.pid=0x8054
+weidosMKR1010LoRaA1.upload_port.1.vid=0x2341
+weidosMKR1010LoRaA1.upload_port.1.pid=0x0054
+weidosMKR1010LoRaA1.upload_port.2.board=mkrwifi1010
 
-weidosMKR1010LoRa.upload.tool=bossac
-weidosMKR1010LoRa.upload.tool.default=bossac
-weidosMKR1010LoRa.upload.tool.network=arduino_ota
-weidosMKR1010LoRa.upload.protocol=sam-ba
-weidosMKR1010LoRa.upload.maximum_size=262144
-weidosMKR1010LoRa.upload.maximum_data_size=32768
-weidosMKR1010LoRa.upload.use_1200bps_touch=true
-weidosMKR1010LoRa.upload.wait_for_upload_port=true
-weidosMKR1010LoRa.upload.native_usb=true
-weidosMKR1010LoRa.build.mcu=cortex-m0plus
-weidosMKR1010LoRa.build.f_cpu=48000000L
-weidosMKR1010LoRa.build.usb_product="Arduino MKR WiFi 1010"
-weidosMKR1010LoRa.build.usb_manufacturer="Arduino LLC"
-weidosMKR1010LoRa.build.board=SAMD_MKRWIFI1010
-weidosMKR1010LoRa.build.core=weidmuller
-weidosMKR1010LoRa.build.extra_flags=-DUSE_ARDUINO_MKR_PIN_LAYOUT -D__SAMD21G18A__ {build.usb_flags} -DUSE_BQ24195L_PMIC -DEXTENDED_PIN_MODE
-weidosMKR1010LoRa.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
-weidosMKR1010LoRa.build.openocdscript=openocd_scripts/arduino_zero.cfg
-weidosMKR1010LoRa.build.variant=mkrwifi1010
-weidosMKR1010LoRa.build.vid=0x2341
-weidosMKR1010LoRa.build.pid=0x8054
-weidosMKR1010LoRa.bootloader.tool=openocd
-weidosMKR1010LoRa.bootloader.tool.default=openocd
-weidosMKR1010LoRa.bootloader.file=mkrwifi1010/samd21_sam_ba_arduino_mkrwifi1010.bin
-#weidosMKR1010LoRa.arduinoota.extraflags=-d
+weidosMKR1010LoRaA1.upload.tool=bossac
+weidosMKR1010LoRaA1.upload.tool.default=bossac
+weidosMKR1010LoRaA1.upload.tool.network=arduino_ota
+weidosMKR1010LoRaA1.upload.protocol=sam-ba
+weidosMKR1010LoRaA1.upload.maximum_size=262144
+weidosMKR1010LoRaA1.upload.maximum_data_size=32768
+weidosMKR1010LoRaA1.upload.use_1200bps_touch=true
+weidosMKR1010LoRaA1.upload.wait_for_upload_port=true
+weidosMKR1010LoRaA1.upload.native_usb=true
+weidosMKR1010LoRaA1.build.mcu=cortex-m0plus
+weidosMKR1010LoRaA1.build.f_cpu=48000000L
+weidosMKR1010LoRaA1.build.usb_product="Arduino MKR WiFi 1010"
+weidosMKR1010LoRaA1.build.usb_manufacturer="Arduino LLC"
+weidosMKR1010LoRaA1.build.board=SAMD_MKRWIFI1010
+weidosMKR1010LoRaA1.build.core=weidmuller
+weidosMKR1010LoRaA1.build.extra_flags=-DUSE_ARDUINO_MKR_PIN_LAYOUT -D__SAMD21G18A__ {build.usb_flags} -DUSE_BQ24195L_PMIC -DEXTENDED_PIN_MODE
+weidosMKR1010LoRaA1.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
+weidosMKR1010LoRaA1.build.openocdscript=openocd_scripts/arduino_zero.cfg
+weidosMKR1010LoRaA1.build.variant=mkrwifi1010
+weidosMKR1010LoRaA1.build.vid=0x2341
+weidosMKR1010LoRaA1.build.pid=0x8054
+weidosMKR1010LoRaA1.bootloader.tool=openocd
+weidosMKR1010LoRaA1.bootloader.tool.default=openocd
+weidosMKR1010LoRaA1.bootloader.file=mkrwifi1010/samd21_sam_ba_arduino_mkrwifi1010.bin
+#weidosMKR1010LoRaA1.arduinoota.extraflags=-d
 
 
 ##########################################
-##### WEIDOS-MKR1010-NBIOT ###############
+##### WEIDOS-MKR1010-NBIOT-A1 ############
 ##########################################
-weidosMKR1010NBIoT.name=WEIDOS-MKR1010-NBIOT
-weidosMKR1010NBIoT.vid.0=0x2341
-weidosMKR1010NBIoT.pid.0=0x8054
-weidosMKR1010NBIoT.vid.1=0x2341
-weidosMKR1010NBIoT.pid.1=0x0054
-weidosMKR1010NBIoT.upload_port.0.vid=0x2341
-weidosMKR1010NBIoT.upload_port.0.pid=0x8054
-weidosMKR1010NBIoT.upload_port.1.vid=0x2341
-weidosMKR1010NBIoT.upload_port.1.pid=0x0054
-weidosMKR1010NBIoT.upload_port.2.board=mkrwifi1010
+weidosMKR1010NBIoTA1.name=WEIDOS-MKR1010-NBIOT-A1
+weidosMKR1010NBIoTA1.vid.0=0x2341
+weidosMKR1010NBIoTA1.pid.0=0x8054
+weidosMKR1010NBIoTA1.vid.1=0x2341
+weidosMKR1010NBIoTA1.pid.1=0x0054
+weidosMKR1010NBIoTA1.upload_port.0.vid=0x2341
+weidosMKR1010NBIoTA1.upload_port.0.pid=0x8054
+weidosMKR1010NBIoTA1.upload_port.1.vid=0x2341
+weidosMKR1010NBIoTA1.upload_port.1.pid=0x0054
+weidosMKR1010NBIoTA1.upload_port.2.board=mkrwifi1010
 
-weidosMKR1010NBIoT.upload.tool=bossac
-weidosMKR1010NBIoT.upload.tool.default=bossac
-weidosMKR1010NBIoT.upload.tool.network=arduino_ota
-weidosMKR1010NBIoT.upload.protocol=sam-ba
-weidosMKR1010NBIoT.upload.maximum_size=262144
-weidosMKR1010NBIoT.upload.maximum_data_size=32768
-weidosMKR1010NBIoT.upload.use_1200bps_touch=true
-weidosMKR1010NBIoT.upload.wait_for_upload_port=true
-weidosMKR1010NBIoT.upload.native_usb=true
-weidosMKR1010NBIoT.build.mcu=cortex-m0plus
-weidosMKR1010NBIoT.build.f_cpu=48000000L
-weidosMKR1010NBIoT.build.usb_product="Arduino MKR WiFi 1010"
-weidosMKR1010NBIoT.build.usb_manufacturer="Arduino LLC"
-weidosMKR1010NBIoT.build.board=SAMD_MKRWIFI1010
-weidosMKR1010NBIoT.build.core=weidmuller
-weidosMKR1010NBIoT.build.extra_flags=-DUSE_ARDUINO_MKR_PIN_LAYOUT -D__SAMD21G18A__ {build.usb_flags} -DUSE_BQ24195L_PMIC -DEXTENDED_PIN_MODE
-weidosMKR1010NBIoT.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
-weidosMKR1010NBIoT.build.openocdscript=openocd_scripts/arduino_zero.cfg
-weidosMKR1010NBIoT.build.variant=mkrwifi1010
-weidosMKR1010NBIoT.build.vid=0x2341
-weidosMKR1010NBIoT.build.pid=0x8054
-weidosMKR1010NBIoT.bootloader.tool=openocd
-weidosMKR1010NBIoT.bootloader.tool.default=openocd
-weidosMKR1010NBIoT.bootloader.file=mkrwifi1010/samd21_sam_ba_arduino_mkrwifi1010.bin
-#weidosMKR1010NBIoT.arduinoota.extraflags=-d
+weidosMKR1010NBIoTA1.upload.tool=bossac
+weidosMKR1010NBIoTA1.upload.tool.default=bossac
+weidosMKR1010NBIoTA1.upload.tool.network=arduino_ota
+weidosMKR1010NBIoTA1.upload.protocol=sam-ba
+weidosMKR1010NBIoTA1.upload.maximum_size=262144
+weidosMKR1010NBIoTA1.upload.maximum_data_size=32768
+weidosMKR1010NBIoTA1.upload.use_1200bps_touch=true
+weidosMKR1010NBIoTA1.upload.wait_for_upload_port=true
+weidosMKR1010NBIoTA1.upload.native_usb=true
+weidosMKR1010NBIoTA1.build.mcu=cortex-m0plus
+weidosMKR1010NBIoTA1.build.f_cpu=48000000L
+weidosMKR1010NBIoTA1.build.usb_product="Arduino MKR WiFi 1010"
+weidosMKR1010NBIoTA1.build.usb_manufacturer="Arduino LLC"
+weidosMKR1010NBIoTA1.build.board=SAMD_MKRWIFI1010
+weidosMKR1010NBIoTA1.build.core=weidmuller
+weidosMKR1010NBIoTA1.build.extra_flags=-DUSE_ARDUINO_MKR_PIN_LAYOUT -D__SAMD21G18A__ {build.usb_flags} -DUSE_BQ24195L_PMIC -DEXTENDED_PIN_MODE
+weidosMKR1010NBIoTA1.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
+weidosMKR1010NBIoTA1.build.openocdscript=openocd_scripts/arduino_zero.cfg
+weidosMKR1010NBIoTA1.build.variant=mkrwifi1010
+weidosMKR1010NBIoTA1.build.vid=0x2341
+weidosMKR1010NBIoTA1.build.pid=0x8054
+weidosMKR1010NBIoTA1.bootloader.tool=openocd
+weidosMKR1010NBIoTA1.bootloader.tool.default=openocd
+weidosMKR1010NBIoTA1.bootloader.file=mkrwifi1010/samd21_sam_ba_arduino_mkrwifi1010.bin
+#weidosMKR1010NBIoTA1.arduinoota.extraflags=-d
