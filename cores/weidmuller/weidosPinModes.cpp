@@ -42,4 +42,8 @@ void weidos_initDefaultIOPins(){
 
 	pinMode(SDCARD_SS_PIN, OUTPUT);
 	digitalWrite(SDCARD_SS_PIN, HIGH);
+
+	pinMode(ETHERNET_CS, OUTPUT);
+	digitalWrite(ETHERNET_CS, HIGH);
+
 }
