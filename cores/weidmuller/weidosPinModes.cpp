@@ -46,4 +46,7 @@ void weidos_initDefaultIOPins(){
 	pinMode(ETHERNET_CS, OUTPUT);
 	digitalWrite(ETHERNET_CS, HIGH);
 
+	pinMode(CS, OUTPUT);
+	digitalWrite(CS, HIGH);
+
 }
