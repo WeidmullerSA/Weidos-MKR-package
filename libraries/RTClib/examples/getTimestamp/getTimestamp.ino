@@ -16,7 +16,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   Get Timestamp example
 
   Obtain current time from the RTC every second and prints it to
-  the Serial Monitor with format: DD/MM/YYYY/ HH:MM:AA
+  the Serial Monitor with format: DD/MM/YYYY/ HH:MM:SS
 */
  
 #include <Arduino.h>

@@ -23,12 +23,10 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 #include <Arduino.h>
-
-#include <Wire.h>
 #include <RTClib.h>
  
-// Declare RTC DS3231
-RTC_DS3231 rtc;
+
+RTC_DS3231 rtc;   // Declare RTC DS3231
  
 void setup () {
  Serial.begin(9600);
