@@ -17,7 +17,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
   For the Analog Output pin (AO_0) it writes an analog value that goes from 0V to 10V over time.
   Once it reaches its maximum value (10V), after 5 seconds it starts again from 0V.
-  Analog Output resolution is 10-bits. 
+  Analog Output resolution is 10-bits (0-1023). 
   It also shows different namings for the Analog Output pin: 
   - Connector Number: pin45
   - Weidos pin name: AO_0
