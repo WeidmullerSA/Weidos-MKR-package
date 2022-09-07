@@ -18,7 +18,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   Constantly reads value from all Analog Inputs and prints it to the 
   Serial Monitor.
   Input Range:  0V - 10V
-  Resolution:   12-bits
+  Resolution:   12-bits (0 - 4095)
   
   It also shows that one can use different naming for the Analog Inputs: 
   - Connector Numbers: pin15, pin16, pin17, pin18
@@ -35,41 +35,59 @@ void loop() {
   int analogValue;
   Serial.println("Weidos pin names");
   analogValue = analogRead(ADI_0);
-  Serial.print(analogValue);
-  Serial.print(" --- ");
+  Serial.print(analogValue);              //Digital value (0-4095)
+  Serial.print(" (");
+  Serial.print(analogValue*10.0f/4095);   //Analog value (0-10V)
+  Serial.print("V)  -  ");
   delay(100);
   
   analogValue = analogRead(ADI_1);
   Serial.print(analogValue);
-  Serial.print(" --- ");
+  Serial.print(" (");
+  Serial.print(analogValue*10.0f/4095);
+  Serial.print("V)  -  ");
   delay(100);
   
   analogValue = analogRead(ADI_2);
   Serial.print(analogValue);
-  Serial.print(" --- ");
+  Serial.print(" (");
+  Serial.print(analogValue*10.0f/4095);
+  Serial.print("V)  -  ");
   delay(100);
   
   analogValue = analogRead(ADI_3);
-  Serial.println(analogValue);
+  Serial.print(analogValue);
+  Serial.print(" (");
+  Serial.print(analogValue*10.0f/4095);
+  Serial.println("V)");
   delay(100);
 
   Serial.println("Connector numbers");
   analogValue = analogRead(pin15);
   Serial.print(analogValue);
-  Serial.print(" --- ");
+  Serial.print(" (");
+  Serial.print(analogValue*10.0f/4095);
+  Serial.print("V)  -  ");
   delay(100);
   
   analogValue = analogRead(pin16);
   Serial.print(analogValue);
-  Serial.print(" --- ");
+  Serial.print(" (");
+  Serial.print(analogValue*10.0f/4095);
+  Serial.print("V)  -  ");
   delay(100);
   
   analogValue = analogRead(pin17);
   Serial.print(analogValue);
-  Serial.print(" --- ");
+  Serial.print(" (");
+  Serial.print(analogValue*10.0f/4095);
+  Serial.print("V)  -  ");
   delay(100);
   
   analogValue = analogRead(pin18);
-  Serial.println(analogValue);
+  Serial.print(analogValue);
+  Serial.print(" (");
+  Serial.print(analogValue*10.0f/4095);
+  Serial.println("V)");
   delay(100);
 }
