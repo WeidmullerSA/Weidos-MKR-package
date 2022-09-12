@@ -6,7 +6,7 @@ This repository contains the source code and configuration files of the Weidos M
 ## Installation on Arduino IDE
 
 1- In File/Preferences:
-	- Add the following URL in "Additional Boards Manager URLs" ()
+	- Add the following URL in "Additional Boards Manager URLs" (https://raw.githubusercontent.com/WeidmullerSA/Weidos-index/main/package_weidmuller_index.json)
 
 2- Restart Arduino IDE
 3- In Tools/Board/Boards Manager...
