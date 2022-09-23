@@ -9,9 +9,10 @@ This repository contains the source code and configuration files of the Weidos M
 	- Add the following URL in "Additional Boards Manager URLs" (https://raw.githubusercontent.com/WeidmullerSA/Weidos-index/main/package_weidmuller_index.json)
 
 2- Restart Arduino IDE
-3- In Tools/Board/Boards Manager...
-	- Search WEIDOS-MKR and install the latest version.
-4- Boards installed. You can select your Weidos-MKR in Tools/Boards/Weidos-MKR/
+
+3- In Tools/Board/Boards Manager... --> Search WEIDOS-MKR and install the latest version.
+	
+4- Boards installed. You can select your WEIDOS-MKR in Tools/Boards/WEIDOS-MKR/
 
 
 ## Support
