@@ -99,7 +99,7 @@ static const uint32_t pin62 =SCL_0;
 #define ETHERNET_CS (6u)            //Ethernet slave select/chip select
 
 // LoRa module
-#ifdef(WEIDOS_LORA)
+#ifdef WEIDOS_LORA
 #define HAVE_RN2XX3
 #define HAVE_PIC
 #define RN2XX3_RESET_PIN (0x2301)
