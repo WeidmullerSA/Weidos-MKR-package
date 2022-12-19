@@ -18,13 +18,13 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //####Weidmuller####
 
 //RS485 - UART
-#define A       (14)
-#define B       (13)
+#define A_RS485 (14)
+#define B_RS485 (13)
 #define Tx_0    (14)
 #define Rx_0    (13)
 #define RTE_DE  (5)
-static const uint32_t pin11 = A;
-static const uint32_t pin12 = B;
+static const uint32_t pin11 = A_RS485;
+static const uint32_t pin12 = B_RS485;
 static const uint32_t pin14 = RTE_DE;
 
 //RS485 macros to be used in the library.
@@ -98,6 +98,12 @@ static const uint32_t pin62 =SCL_0;
 #define SDCARD_SS_PIN (0x2106)      //SD slave select/chip select
 #define ETHERNET_CS (6u)            //Ethernet slave select/chip select
 
+// LoRa module
+#ifdef WEIDOS_LORA
+#define HAVE_RN2XX3
+#define HAVE_PIC
+#define RN2XX3_RESET_PIN (0x2301)
+#endif
 
 //####Weidmuller####
 #endif

@@ -48,7 +48,7 @@ void loop() {
   digitalWrite((pin42), HIGH);
   delay(2000);
   
-  //Turn off LED's using Weidos pin names (DO_X)
+  //Turn off LED's using Weidos pin names (MF_X)
   digitalWrite((MF_0), LOW);
   delay(2000);
   digitalWrite((MF_1), LOW);
