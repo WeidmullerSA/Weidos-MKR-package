@@ -1,4 +1,19 @@
-Weidos MKR package 1.0.1  2022.09.06
+Weidos MKR package 1.0.1
+
+Improvements
+* Analog output pin AO_0 initialized to 0V by default.
+
+
+Bugfixes
+* Internal identifier name changed to avoid multidefinition with external libraries.
+
+
+New Boards & updates
+* Weidos-MKR1010-LoRa-A1 board
+* Unnecessary libraries removed
+
+
+Weidos MKR package 1.0.0  2022.09.06
 
 * First public release.
 
