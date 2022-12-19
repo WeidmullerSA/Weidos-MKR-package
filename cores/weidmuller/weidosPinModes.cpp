@@ -41,7 +41,7 @@ void weidos_initDefaultIOPins(){
 	pinMode(pin18, INPUT);	//ADI_3
 
 	//Analog output
-	pinMode(pin45, OUTPUT);	//A0_0
+	analogWrite(pin45, 0);	//AO_0
 
 	pinMode(SDCARD_SS_PIN, OUTPUT);
 	digitalWrite(SDCARD_SS_PIN, HIGH);
