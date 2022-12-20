@@ -37,7 +37,7 @@ void loop() {
   if(!error) Serial.println("Data sent successfully!");
   if(error == RADIO_INVALID_PARAM){
     Serial.println("Error: Invalid parameter!");
-    Serial.println("Allowed characters in the String "data" are: 0123456789ABCDEF (non-case sensitive)");
+    Serial.println("Allowed characters in the String data are: 0123456789ABCDEF (non-case sensitive)");
   }
   if(error == RADIO_BUSY) Serial.println("Error: Radio busy!");
   if(error == RADIO_TIMEOUT) Serial.println("Error: Radio Timeout!");
