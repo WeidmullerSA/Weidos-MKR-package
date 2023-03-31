@@ -53,9 +53,10 @@ void weidos_initDefaultIOPins(){
 	digitalWrite(CS, HIGH);
 
 	//SARA R412 NBIOT chip
+	#ifdef WEIDOS_NBIOT
 	pinMode(SARA_PWR_ON, OUTPUT);
   	digitalWrite(SARA_PWR_ON, LOW);
   	pinMode(SARA_RESETN, OUTPUT);
   	digitalWrite(SARA_RESETN, LOW);
-
+	#endif
 }
