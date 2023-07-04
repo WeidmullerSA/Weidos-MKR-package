@@ -74,10 +74,10 @@ class TwoWire : public HardwareI2C
     bool transmissionBegun;
 
     // RX Buffer
-    arduino::RingBufferN<256> rxBuffer;
+    arduino::RingBufferN<2056> rxBuffer;
 
     //TX buffer
-    arduino::RingBufferN<256> txBuffer;
+    arduino::RingBufferN<2056> txBuffer;
     uint8_t txAddress;
 
     // Callback user functions
