@@ -6,6 +6,7 @@
 
 
 #define PIC_I2C_ADDRESS 120
+#define RX_BUFFER 1500
 
 class HardwareSerialPIC : public HardwareSerial {
 	public:
@@ -49,6 +50,11 @@ class HardwareSerialPIC : public HardwareSerial {
 
 	private:
 		uint8_t i2cAddr;
+		uint16_t _pendingBufferReadBytes;
+		uint8_t _bufferReadBytes[RX_BUFFER];
+		uint16_t _counterReadBytes;
+		uint16_t _updatedReadBytes;
+		int readAndSave(void);
 };
 
 extern HardwareSerialPIC SerialPIC;
