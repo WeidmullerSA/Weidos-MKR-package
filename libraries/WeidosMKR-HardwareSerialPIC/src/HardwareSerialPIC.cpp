@@ -24,15 +24,13 @@ void HardwareSerialPIC::begin(unsigned long baud) {
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 void HardwareSerialPIC::begin(unsigned long baud, uint16_t config) {
 	Wire.begin();
-
 	reset();
-
 	// Set baudrate
 	setBaudrate(baud);
-
+	
 	_pendingBufferReadBytes = 0;
-	_counterReadBytes = 0;
-	_updatedReadBytes = 0;
+  	_counterReadBytes = 0;
+  	_updatedReadBytes = 0;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -44,11 +42,6 @@ void HardwareSerialPIC::reset(){
 	Wire.beginTransmission(i2cAddr);
 	Wire.write(RESET_REGISTER);
 	Wire.endTransmission();
-	delay(100);
-
-	_pendingBufferReadBytes = 0;
-	_counterReadBytes = 0;
-	_updatedReadBytes = 0;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -56,6 +49,11 @@ void HardwareSerialPIC::setBaudrate(unsigned long baud) {
 	Wire.beginTransmission(i2cAddr);
 	Wire.write(baud);
 	Wire.endTransmission();
+	delay(100);
+
+ 	_pendingBufferReadBytes = 0;
+  	_counterReadBytes = 0;
+  	_updatedReadBytes = 0;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -70,69 +68,62 @@ size_t HardwareSerialPIC::write(uint8_t value) {
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 size_t HardwareSerialPIC::write(const uint8_t *buffer, size_t size) {
 	uint8_t i = 0;
-	Wire.beginTransmission(i2cAddr);
-	Wire.write(FIFO_TX_REGISTER);
-	size_t pending = size;
-	while (pending--) {
-		Wire.write(*buffer++);
-		delay(1);
-		if(i++ == 100)//254
-		{
-			Wire.endTransmission();		
+  	Wire.beginTransmission(i2cAddr);
+  	Wire.write(FIFO_TX_REGISTER);
+  	size_t pending = size;
+ 	while (pending--) {
+    	Wire.write(*buffer++);
+    	delay(1);
+    	if(i++ == 100) { //254      	
+			Wire.endTransmission();
 			// Clean reading buffer
-			if(available())
-			{
-				_bufferReadBytes[_counterReadBytes++] = readAndSave();
-			}
+			if(available()){
+	    		_bufferReadBytes[_counterReadBytes++] = readAndSave();
+	  		}
 			// End reading
 			Wire.beginTransmission(i2cAddr);
 			Wire.write(FIFO_TX_REGISTER);
 			i=0;
-		}
-	}
-	Wire.endTransmission();
-	return size;
+      	}
+  	}
+  	Wire.endTransmission();	
+  	return size;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 int HardwareSerialPIC::available() {
 	uint16_t ret;
 	
-	if(_pendingBufferReadBytes != 0)
-	{		
-		return _pendingBufferReadBytes;
-	}
+  	if(_pendingBufferReadBytes != 0) {			
+    	return _pendingBufferReadBytes;
+    }
 
-	if(_updatedReadBytes < _counterReadBytes)
-	{
-		return _counterReadBytes - _updatedReadBytes;
-	}
-	
-	
-	_updatedReadBytes = 0;
-	_counterReadBytes = 0;
+  	if(_updatedReadBytes < _counterReadBytes) {		
+    	return _counterReadBytes - _updatedReadBytes;
+    }
+		
+  	_updatedReadBytes = 0;
+  	_counterReadBytes = 0;
 
-	do
-	{
-		do
-		{
-			do
-			{
-				Wire.beginTransmission(i2cAddr);
-				Wire.write(FIFO_RX_PENDING_REGISTER);
-			} while(Wire.endTransmission() != 0);
+  	do {
+    	do {
+	  		do {
+	      		Wire.beginTransmission(i2cAddr);
+	      		Wire.write(FIFO_RX_PENDING_REGISTER);
 
-			Wire.requestFrom(i2cAddr, 2);
+	    	} while (Wire.endTransmission() != 0);
 
-		} while(Wire.available() != 2);
+	  		Wire.requestFrom(i2cAddr, 2);
 
-		ret = Wire.read();
-		ret |= Wire.read() << 8;
+		} while (Wire.available() != 2);
 
-		_pendingBufferReadBytes = ret;
-	} while(ret > 800);
+      	ret = Wire.read();
+      	ret |= Wire.read() << 8;
+      	_pendingBufferReadBytes = ret;
 
-	return ret;
+    } while (ret > 800);
+
+  	return ret;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -154,103 +145,92 @@ int HardwareSerialPIC::availableForWrite() {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 int HardwareSerialPIC::read() {
-	// Check saved bytes
+	// Check saved bytes  
+  	if(_updatedReadBytes != _counterReadBytes) {
+    	return _bufferReadBytes[_updatedReadBytes++];
+    }
 
-	if(_updatedReadBytes != _counterReadBytes)	
-	{
-		return _bufferReadBytes[_updatedReadBytes++];
-	}
+  	_updatedReadBytes = 0;
+  	_counterReadBytes = 0;
 
-	_updatedReadBytes = 0;
-	_counterReadBytes = 0;
+  	uint16_t numberReadBytes = available();
 
-	uint16_t numberReadBytes = available();	
-	
-	if(!numberReadBytes)
-	{
-		return -1;
-	}
+ 	if(!numberReadBytes) {
+    	return -1;
+    }
 
-	if(numberReadBytes > 250)
-		numberReadBytes = 250;
+  	if(numberReadBytes > 250) 
+    	numberReadBytes = 250;
 	
 	
-	Wire.beginTransmission(i2cAddr);
-	Wire.write(FIFO_RX_REGISTER);
-	Wire.endTransmission();
-	Wire.requestFrom(i2cAddr, numberReadBytes);
-	if (Wire.available() != numberReadBytes) {
-		return -1;
-	}
+  	Wire.beginTransmission(i2cAddr);
+  	Wire.write(FIFO_RX_REGISTER);
+  	Wire.endTransmission();
+  	Wire.requestFrom(i2cAddr, numberReadBytes);
+  	if (Wire.available() != numberReadBytes) {
+    	return -1;
+  	}
 	
-	while(numberReadBytes-- != 0)
-	{
-		if(_pendingBufferReadBytes > 0)
+  	while(numberReadBytes-- != 0) {
+    	if(_pendingBufferReadBytes > 0)
 			_pendingBufferReadBytes--;
-		_bufferReadBytes[_counterReadBytes++] = Wire.read();
-	}
-	return _bufferReadBytes[_updatedReadBytes++];
+      	_bufferReadBytes[_counterReadBytes++] = Wire.read();
+    }
 
+  	return _bufferReadBytes[_updatedReadBytes++];
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 int HardwareSerialPIC::readAndSave() {
 	// Check saved bytes
-	/*TTTTTTESTTTTT*/
-	uint16_t numberReadBytes = available();	
+  	uint16_t numberReadBytes = available();	
 
-	do
-	{
-		do
-		{
-			do
-			{
-				Wire.beginTransmission(i2cAddr);
-				Wire.write(FIFO_RX_PENDING_REGISTER);
-			} while(Wire.endTransmission() != 0);
+  	do {
+    	do {
+			do {
+	    		Wire.beginTransmission(i2cAddr);
+	      		Wire.write(FIFO_RX_PENDING_REGISTER);
+	    	} while (Wire.endTransmission() != 0);
 
 			Wire.requestFrom(i2cAddr, 2);
+		} while(Wire.available() != 2); 
 
-		} while(Wire.available() != 2);
+      	numberReadBytes = Wire.read();
+      	numberReadBytes |= Wire.read() << 8;
+    } while (numberReadBytes > 800);
 
-		numberReadBytes = Wire.read();
-		numberReadBytes |= Wire.read() << 8;
-	} while(numberReadBytes > 800);
+  	if(!numberReadBytes) {
+    	return -1;
+    }
 
+  	if(numberReadBytes > 250)
+    	numberReadBytes = 250;
 
-	
-	if(!numberReadBytes)
-	{
-		return -1;
-	}
+  	Wire.beginTransmission(i2cAddr);
+  	Wire.write(FIFO_RX_REGISTER);
+  	Wire.endTransmission();
+  	Wire.requestFrom(i2cAddr, numberReadBytes);
+  	if (Wire.available() != numberReadBytes) {	
+    	return -1;
+  	}
 
-	if(numberReadBytes > 250)
-		numberReadBytes = 250;
-
-	Wire.beginTransmission(i2cAddr);
-	Wire.write(FIFO_RX_REGISTER);
-	Wire.endTransmission();
-	Wire.requestFrom(i2cAddr, numberReadBytes);
-	if (Wire.available() != numberReadBytes) {	
-		return -1;
-	}
-
-	while(numberReadBytes-- != 0)
-	{
-		if(_pendingBufferReadBytes > 0)
+  	while(numberReadBytes-- != 0) {
+    	if(_pendingBufferReadBytes > 0)
 			_pendingBufferReadBytes--;
-		_bufferReadBytes[_counterReadBytes++] = Wire.read();
-	}
-	return _bufferReadBytes[_updatedReadBytes++];
+      	_bufferReadBytes[_counterReadBytes++] = Wire.read();
+    }
+	
+  	return _bufferReadBytes[_updatedReadBytes];
 	
 }
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 size_t HardwareSerialPIC::read(uint8_t* buff, size_t size) {
 	if(!available()) return -1;
 
 	Wire.beginTransmission(i2cAddr);
 	Wire.write(FIFO_RX_REGISTER);
-	Wire.endTransmission();
+	Wire.endTransmission();	
 
 	Wire.requestFrom(i2cAddr, size);
 	if (Wire.available() != size) {
