@@ -42,18 +42,18 @@ void HardwareSerialPIC::reset(){
 	Wire.beginTransmission(i2cAddr);
 	Wire.write(RESET_REGISTER);
 	Wire.endTransmission();
+	delay(100);
+	
+ 	_pendingBufferReadBytes = 0;
+  	_counterReadBytes = 0;
+  	_updatedReadBytes = 0;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 void HardwareSerialPIC::setBaudrate(unsigned long baud) {
 	Wire.beginTransmission(i2cAddr);
 	Wire.write(baud);
-	Wire.endTransmission();
-	delay(100);
-
- 	_pendingBufferReadBytes = 0;
-  	_counterReadBytes = 0;
-  	_updatedReadBytes = 0;
+	Wire.endTransmission();	
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
