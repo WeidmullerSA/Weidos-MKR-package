@@ -1,4 +1,4 @@
-WeidosMKR-HardwareSerialPIC-library 1.1.0 2024.01.17
+WeidosMKR-HardwareSerialPIC-library 2.0.0 2024.01.29
 
 *Bigfixes solving collision problems with input and output datagrams
 

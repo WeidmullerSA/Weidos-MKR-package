@@ -1,5 +1,6 @@
-Weidos-MKR-NBIoT-library 1.0.1 - 2024.01.15
+Weidos-MKR-NBIoT-library 2.0.0 - 2024.01.29
 
+* Add examples of use in Weidos
 * Remove GPRS, tools ans RAT configuration examples
 * Modify RootCertFile with valid certificates
 * Modem files (Begin funciton with softreset, add autobaud function, modify poll function)
