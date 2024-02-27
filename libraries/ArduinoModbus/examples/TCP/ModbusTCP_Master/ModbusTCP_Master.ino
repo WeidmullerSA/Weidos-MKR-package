@@ -17,6 +17,15 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   Modbus TCP Master example
 
   Example to configure a Modbus TCP Master.
+
+  Each 5 seconds it makes 4 requests:
+    1- 3 consecutive COILS starting at address 700.
+    2- 3 consectutive DISCRETE INPUTS starting at address 800.
+    3- 3 consecutive HOLDING REGISTERS starting at address 900.
+    4- 5 consecutive INPUT REGISTERS starting at address 1000.
+  It also writes a counter value to a holding register and toggles one coil
+
+  This example can be used with a second Weidos with example: ModbusTCP_Slave (File/Examples/ArduinoModbus/TCP/ModbusTCP_Slave)
 */
 
 #include <Ethernet.h>

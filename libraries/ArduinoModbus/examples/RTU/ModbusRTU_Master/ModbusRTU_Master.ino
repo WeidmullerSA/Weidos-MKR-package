@@ -35,7 +35,8 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
     2- 3 consectutive DISCRETE INPUTS starting at address 800.
     3- 3 consecutive HOLDING REGISTERS starting at address 900.
     4- 5 consecutive INPUT REGISTERS starting at address 1000.
-  
+  It also writes a counter value to a holding register and toggles one coil
+
   This example can be used with a second Weidos with example: ModbusRTU_Slave (File/Examples/ArduinoModbus/RTU/ModbusRTU_Slave)
   Change DIP switches to the RS485 configuration, wire pin11 <-> pin11 and pin12 <-> pin12 and upload ModbusRTU_Slave example to the second Weidos.
 
@@ -74,9 +75,10 @@ void setup() {
   else Serial.println("Client successfully initialized");
 }
 
-void loop() {
-  delay(5000);
+uint16_t counter = 0;
+bool toggle = true;
 
+void loop() {  
   
   Serial.println("Reading Coils:");
   ModbusRTUClient.requestFrom(SLAVE_ADDRESS, COILS, FIRST_COIL, NUM_COILS);
@@ -106,7 +108,18 @@ void loop() {
     Serial.println(data);
   }
 
+  Serial.println("Write counter into holding register with address 900");
+  modbusRTUClient.holdingRegisterWrite(900, ++counter);
+  Serial.print("Written value in holding register: ");
+  Serial.println(counter);
+    
+  Serial.println("Write boolean into coil with address 700");
+  toggle = !toggle;
+  modbusRTUClient.coilWrite(700, toggle);
+  Serial.print("Written value in coil: ");
+  Serial.println(toggle);
+  Serial.println("-------------------------------");
   Serial.println();
-  Serial.println();
+  delay(5000);
   
 }
